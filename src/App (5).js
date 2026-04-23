@@ -745,7 +745,7 @@ export default function BetaTesterApp() {
       </aside>
 
       <main style={{ flex: 1, padding: "28px 32px", maxWidth: 760, overflowY: "auto" }}>
-        {page === "queue" && !judging && <QueuePage queue={queue} onStart={item => setJudging(item)} />}
+        {page === "queue" && !judging && <QueuePage onStart={item => setJudging(item)} />}
         {page === "queue" &&  judging && <JudgePage item={judging} onDone={handleJudgeDone} />}
         {page === "detail" && <DetailPage records={[...newRecords, ...HISTORY]} />}
         {page === "mywork" && <MyWorkPage newRecords={newRecords} />}
