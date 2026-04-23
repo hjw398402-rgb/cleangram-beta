@@ -82,8 +82,7 @@ function IgRing({ size = 56, children }) {
 function Ring({ rate, color, size = 60, sw = 6 }) {
   const r = (size - sw) / 2, circ = 2 * Math.PI * r;
   const [d, setD] = useState(0);
-  // ✨ 경고 수정 완료 [circ, rate]
-  useEffect(() => { const t = setTimeout(() => setD(circ * rate), 250); return () => clearTimeout(t); }, [circ, rate]);
+  useEffect(() => { const t = setTimeout(() => setD(circ * rate), 250); return () => clearTimeout(t); }, []);
   return (
     <div style={{ position: "relative", width: size, height: size }}>
       <svg width={size} height={size} style={{ transform: "rotate(-90deg)", position: "absolute" }}>
@@ -465,8 +464,7 @@ function SectionHead({ title, sub }) {
 
 function BarAnim({ rate, color, delay = 0 }) {
   const [w, setW] = useState(0);
-  // ✨ 경고 수정 완료 [rate, delay]
-  useEffect(() => { const t = setTimeout(() => setW(rate * 100), delay); return () => clearTimeout(t); }, [rate, delay]);
+  useEffect(() => { const t = setTimeout(() => setW(rate * 100), delay); return () => clearTimeout(t); }, []);
   return <div style={{ width: `${w}%`, height: "100%", borderRadius: 99, background: color, transition: "width 1.1s cubic-bezier(.4,0,.2,1)" }} />;
 }
 
