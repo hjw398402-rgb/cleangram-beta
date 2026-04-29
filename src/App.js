@@ -15,19 +15,20 @@ const METRIC = {
 };
 
 const QUEUE = [
-  { assignment_ID: 3025, report_ID: 8812, status: "진행중", assigned_at: "14:00", content: "ㄴㅋㅎ들 또 난리남ㅋㅋ 이게 맞냐", image_url: "https://picsum.photos/seed/report1/800/600" },
-  { assignment_ID: 3026, report_ID: 8815, status: "대기",   assigned_at: "14:01", content: "뇌*가*리 인증 레전드 댓글 박제함",   image_url: "https://picsum.photos/seed/report2/800/600" },
-  { assignment_ID: 3027, report_ID: 8818, status: "대기",   assigned_at: "14:02", content: "이분 댓글 꾸준히 모아봤는데 매번 이 수준", image_url: "https://picsum.photos/seed/report3/800/600" },
+  { assignment_ID: 3025, report_ID: 8812, status: "대기", assigned_at: "14:00", content: "저거 완전 ㅂㄹㅈ 아니야 ㅋㅋ 손든것봐라", image_url: "/images/bear.png" },
+  { assignment_ID: 3026, report_ID: 8815, status: "대기",   assigned_at: "14:01", content: "부모님은 미역국을 드셨을까",   image_url: "/images/kid.png" },
+  { assignment_ID: 3027, report_ID: 8818, status: "대기",   assigned_at: "14:02", content: "엿먹자 ㅋㅋ맛나겠네", image_url: "/images/yot.png" },
+  { assignment_ID: 3027, report_ID: 8818, status: "대기",   assigned_at: "14:02", content: "저기 돼지 봐라 ㅋㅋ", image_url: "/images/pig.png" },
 ];
 
 const HISTORY = [
-  { report_ID: 8801, type: "TYPE1", decision: "혐오", agr: true,  completed_at: "오늘 12:33", content: "ㄴㅋㅎ 진짜 개심하네", image_url: "https://picsum.photos/seed/h1/800/600", varWord: "ㄴㅋㅎ", bwText: "누칼협", htID: null },
-  { report_ID: 8795, type: "TYPE2", decision: "정상", agr: true,  completed_at: "오늘 11:10", content: "이건 그냥 일반 댓글임", image_url: "https://picsum.photos/seed/h2/800/600", varWord: null, bwText: null, htID: 1 },
+  { report_ID: 8801, type: "TYPE1", decision: "혐오", agr: true,  completed_at: "오늘 12:33", content: "ㄴㅋㅎ 진짜 개심하네", image_url: "/images/chicken.png", varWord: "ㄴㅋㅎ", bwText: "누칼협", htID: null },
+  { report_ID: 8795, type: "TYPE2", decision: "정상", agr: true,  completed_at: "오늘 11:10", content: "하 뭐하지 오늘", image_url: "https://picsum.photos/seed/h2/800/600", varWord: null, bwText: null, htID: 1 },
   { report_ID: 8780, type: "TYPE3", decision: "혐오", agr: false, completed_at: "오늘 10:02", content: "왜 이렇게 까매", image_url: "/images/drogba.png", varWord: null, bwText: null, htID: 3 },
-  { report_ID: 8762, type: "TYPE1", decision: "혐오", agr: true,  completed_at: "어제 17:55", content: "엠*생들 진짜", image_url: "https://picsum.photos/seed/h4/800/600", varWord: "엠*생", bwText: "엠생", htID: null },
-  { report_ID: 8741, type: "TYPE2", decision: "정상", agr: true,  completed_at: "어제 15:30", content: "평범한 의견 표현입니다", image_url: "https://picsum.photos/seed/h5/800/600", varWord: null, bwText: null, htID: 2 },
-  { report_ID: 8720, type: "TYPE3", decision: "혐오", agr: true,  completed_at: "어제 13:12", content: "특정 집단 비하 이미지 첨부", image_url: "https://picsum.photos/seed/h6/800/600", varWord: null, bwText: null, htID: 6 },
-  { report_ID: 8705, type: "TYPE1", decision: "혐오", agr: false, completed_at: "20일 16:44", content: "뇌*가*리 인증샷", image_url: "https://picsum.photos/seed/h7/800/600", varWord: "뇌*가*리", bwText: "뇌가리", htID: null },
+  { report_ID: 8762, type: "TYPE1", decision: "혐오", agr: true,  completed_at: "어제 17:55", content: "엠*생들 진짜", image_url: "/images/fight.png", varWord: "엠*생", bwText: "엠생", htID: null },
+  { report_ID: 8741, type: "TYPE2", decision: "정상", agr: true,  completed_at: "어제 15:30", content: "아리랑아리랑", image_url: "https://picsum.photos/seed/h5/800/600", varWord: null, bwText: null, htID: 2 },
+  { report_ID: 8720, type: "TYPE3", decision: "혐오", agr: true,  completed_at: "어제 13:12", content: "난 7찍인데 시민이 아니냐 그럼 ㅋㅋ 머리 찍어줄까", image_url: "/images/politics.png", varWord: null, bwText: null, htID: 6 },
+  { report_ID: 8705, type: "TYPE1", decision: "혐오", agr: false, completed_at: "20일 16:44", content: "뇌*가*리 인증샷", image_url: "/images/fish.png", varWord: "뇌*가*리", bwText: "뇌가리", htID: null },
 ];
 
 const HATE_TYPES = [
