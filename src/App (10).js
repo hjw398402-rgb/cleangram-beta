@@ -15,21 +15,19 @@ const METRIC = {
 };
 
 const QUEUE = [
-  { assignment_ID: 3025, report_ID: 8812, status: "대기", assigned_at: "14:00", content: "ㅂㄹㅈ인가 ㅋㅋ", image_url: "/images/bear.png" },
-  { assignment_ID: 3026, report_ID: 8815, status: "대기",   assigned_at: "14:01", content: "진짜 한심하네 미역국이 아깝네 참",   image_url: "/images/kid.png" },
-  { assignment_ID: 3027, report_ID: 8818, status: "대기",   assigned_at: "14:02", content: "어 저거 돼지아니야? 귀엽네 ㅋㅋㅋ", image_url: "/images/pig.png" },
-  { assignment_ID: 3028, report_ID: 8814, status: "대기",   assigned_at: "14:07", content: "야 누구누구야 엿 먹어봤냐? 저거 맛있음", image_url: "/images/yot.png" },
-
+  { assignment_ID: 3025, report_ID: 8812, status: "진행중", assigned_at: "14:00", content: "ㄴㅋㅎ들 또 난리남ㅋㅋ 이게 맞냐", image_url: "https://picsum.photos/seed/report1/800/600" },
+  { assignment_ID: 3026, report_ID: 8815, status: "대기",   assigned_at: "14:01", content: "뇌*가*리 인증 레전드 댓글 박제함",   image_url: "https://picsum.photos/seed/report2/800/600" },
+  { assignment_ID: 3027, report_ID: 8818, status: "대기",   assigned_at: "14:02", content: "이분 댓글 꾸준히 모아봤는데 매번 이 수준", image_url: "https://picsum.photos/seed/report3/800/600" },
 ];
 
 const HISTORY = [
-  { report_ID: 8801, type: "TYPE1", decision: "혐오", agr: true,  completed_at: "오늘 12:33", content: "ㄴㅋㅎ 진짜 개심하네", image_url: "/images/chicken.png", varWord: "ㄴㅋㅎ", bwText: "누칼협", htID: null },
-  { report_ID: 8795, type: "TYPE2", decision: "정상", agr: true,  completed_at: "오늘 11:10", content: "겨어어엉치가 좋아", image_url: "https://picsum.photos/seed/h2/800/600", varWord: null, bwText: null, htID: 1 },
+  { report_ID: 8801, type: "TYPE1", decision: "혐오", agr: true,  completed_at: "오늘 12:33", content: "ㄴㅋㅎ 진짜 개심하네", image_url: "https://picsum.photos/seed/h1/800/600", varWord: "ㄴㅋㅎ", bwText: "누칼협", htID: null },
+  { report_ID: 8795, type: "TYPE2", decision: "정상", agr: true,  completed_at: "오늘 11:10", content: "이건 그냥 일반 댓글임", image_url: "https://picsum.photos/seed/h2/800/600", varWord: null, bwText: null, htID: 1 },
   { report_ID: 8780, type: "TYPE3", decision: "혐오", agr: false, completed_at: "오늘 10:02", content: "왜 이렇게 까매", image_url: "/images/drogba.png", varWord: null, bwText: null, htID: 3 },
-  { report_ID: 8762, type: "TYPE1", decision: "혐오", agr: true,  completed_at: "어제 17:55", content: "엠*생들 진짜", image_url: "/images/fight.png", varWord: "엠*생", bwText: "엠생", htID: null },
-  { report_ID: 8741, type: "TYPE2", decision: "정상", agr: true,  completed_at: "어제 15:30", content: "아아아아아후후후후후", image_url: "https://picsum.photos/seed/h5/800/600", varWord: null, bwText: null, htID: 2 },
-  { report_ID: 8720, type: "TYPE3", decision: "혐오", agr: true,  completed_at: "어제 13:12", content: "난 7찍인데? 난 주민 아니냐 머리 찍어줘?", image_url: "/images/politics.png", varWord: null, bwText: null, htID: 6 },
-  { report_ID: 8705, type: "TYPE1", decision: "혐오", agr: false, completed_at: "20일 16:44", content: "뇌*가*리 인증샷", image_url: "/images/fish.png", varWord: "뇌*가*리", bwText: "뇌가리", htID: null },
+  { report_ID: 8762, type: "TYPE1", decision: "혐오", agr: true,  completed_at: "어제 17:55", content: "엠*생들 진짜", image_url: "https://picsum.photos/seed/h4/800/600", varWord: "엠*생", bwText: "엠생", htID: null },
+  { report_ID: 8741, type: "TYPE2", decision: "정상", agr: true,  completed_at: "어제 15:30", content: "평범한 의견 표현입니다", image_url: "https://picsum.photos/seed/h5/800/600", varWord: null, bwText: null, htID: 2 },
+  { report_ID: 8720, type: "TYPE3", decision: "혐오", agr: true,  completed_at: "어제 13:12", content: "특정 집단 비하 이미지 첨부", image_url: "https://picsum.photos/seed/h6/800/600", varWord: null, bwText: null, htID: 6 },
+  { report_ID: 8705, type: "TYPE1", decision: "혐오", agr: false, completed_at: "20일 16:44", content: "뇌*가*리 인증샷", image_url: "https://picsum.photos/seed/h7/800/600", varWord: "뇌*가*리", bwText: "뇌가리", htID: null },
 ];
 
 const HATE_TYPES = [
@@ -196,7 +194,6 @@ function DetailPage({ records }) {
               </div>
             </div>
           </div>
-        {h.decision === "혐오" && (
           <div style={{ padding: "14px 18px", borderBottom: "1px solid " + C.border }}>
             <div style={{ fontSize: 11, color: C.sub, letterSpacing: "1px", textTransform: "uppercase", marginBottom: 10 }}>혐오 유형</div>
             <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
@@ -207,7 +204,6 @@ function DetailPage({ records }) {
               </div>
             </div>
           </div>
-        )}
           {h.type === "TYPE1" && h.varWord && (
             <div style={{ padding: "14px 18px", borderBottom: "1px solid " + C.border }}>
               <div style={{ fontSize: 11, color: C.sub, letterSpacing: "1px", textTransform: "uppercase", marginBottom: 10 }}>우회표현 분석</div>
@@ -224,7 +220,7 @@ function DetailPage({ records }) {
               </div>
             </div>
           )}
-          {h.decision === "혐오" && (h.type === "TYPE2" || h.type === "TYPE3") && hateName && (
+          {(h.type === "TYPE2" || h.type === "TYPE3") && hateName && (
             <div style={{ padding: "14px 18px", borderBottom: "1px solid " + C.border }}>
               <div style={{ fontSize: 11, color: C.sub, letterSpacing: "1px", textTransform: "uppercase", marginBottom: 10 }}>혐오 카테고리</div>
               <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: tc.bg, border: "1px solid " + tc.color + "33", borderRadius: 9, padding: "8px 16px" }}>

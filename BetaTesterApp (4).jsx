@@ -79,15 +79,17 @@ function Ring({ rate, color, size = 60, sw = 6 }) {
   const [d, setD] = useState(0);
   useEffect(() => { const t = setTimeout(() => setD(circ * rate), 250); return () => clearTimeout(t); }, []);
   return (
-    <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 4 }}>
-      <div style={{ fontSize: 13, fontWeight: 700, color: C.text }}>{Math.round(rate * 100)}%</div>
-      <svg width={size} height={size} style={{ transform: "rotate(-90deg)" }}>
-        <circle cx={size/2} cy={size/2} r={r} fill="none" stroke="#e8eaed" strokeWidth={sw} />
-        <circle cx={size/2} cy={size/2} r={r} fill="none" stroke={color} strokeWidth={sw}
-          strokeDasharray={`${d} ${circ}`} strokeLinecap="round"
-          style={{ transition: "stroke-dasharray 1.1s cubic-bezier(.4,0,.2,1)" }} />
-      </svg>
-    </div>
+    <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`}>
+      <circle cx={size/2} cy={size/2} r={r} fill="none" stroke="#e8eaed" strokeWidth={sw} />
+      <circle cx={size/2} cy={size/2} r={r} fill="none" stroke={color} strokeWidth={sw}
+        strokeDasharray={`${d} ${circ}`} strokeLinecap="round"
+        strokeDashoffset={circ / 4}
+        style={{ transition: "stroke-dasharray 1.1s cubic-bezier(.4,0,.2,1)" }} />
+      <text x="50%" y="50%" textAnchor="middle" dy="0.35em"
+        style={{ fontSize: 11, fontWeight: 700, fill: C.text, fontFamily: "inherit" }}>
+        {Math.round(rate * 100)}%
+      </text>
+    </svg>
   );
 }
 

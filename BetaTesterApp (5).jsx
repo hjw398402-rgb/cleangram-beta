@@ -79,14 +79,21 @@ function Ring({ rate, color, size = 60, sw = 6 }) {
   const [d, setD] = useState(0);
   useEffect(() => { const t = setTimeout(() => setD(circ * rate), 250); return () => clearTimeout(t); }, []);
   return (
-    <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 4 }}>
-      <div style={{ fontSize: 13, fontWeight: 700, color: C.text }}>{Math.round(rate * 100)}%</div>
+    <div style={{ position: "relative", width: size, height: size, display: "inline-block" }}>
       <svg width={size} height={size} style={{ transform: "rotate(-90deg)" }}>
         <circle cx={size/2} cy={size/2} r={r} fill="none" stroke="#e8eaed" strokeWidth={sw} />
         <circle cx={size/2} cy={size/2} r={r} fill="none" stroke={color} strokeWidth={sw}
           strokeDasharray={`${d} ${circ}`} strokeLinecap="round"
           style={{ transition: "stroke-dasharray 1.1s cubic-bezier(.4,0,.2,1)" }} />
       </svg>
+      <span style={{
+        position: "absolute", top: "50%", left: "50%",
+        transform: "translate(-50%, -50%)",
+        fontSize: 11, fontWeight: 700, color: C.text,
+        pointerEvents: "none", whiteSpace: "nowrap",
+      }}>
+        {Math.round(rate * 100)}%
+      </span>
     </div>
   );
 }
