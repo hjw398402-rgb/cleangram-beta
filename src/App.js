@@ -547,7 +547,7 @@ export default function BetaTesterApp() {
 
   if (isMobile) {
     return (
-      <div style={{ display: "flex", flexDirection: "column", minHeight: "100vh", background: C.bg, fontFamily: "'Pretendard','Apple SD Gothic Neo','Noto Sans KR',sans-serif", color: C.text }}>
+      <div style={{ display: "flex", flexDirection: "column", minHeight: "100vh", background: C.bg, fontFamily: "'Pretendard','Apple SD Gothic Neo','Noto Sans KR',sans-serif", color: C.text,overflowX: "hidden", width: "100vw", position: "relative" }}>
         <header style={{ background: "#fff", borderBottom: "1px solid " + C.border, padding: "12px 16px", display: "flex", alignItems: "center", gap: 10, position: "sticky", top: 0, zIndex: 100 }}>
           <img src="/images/nullhate.png" style={{ height: 20, objectFit: "contain" }} alt="nullhate" />
           <div style={{ fontSize: 13, fontWeight: 800, background: C.ig, WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>(null)hate</div>
