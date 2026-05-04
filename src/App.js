@@ -536,7 +536,7 @@ export default function BetaTesterApp() {
   };
 
   const mainContent = (
-    <main style={{ flex: 1, padding: isMobile ? "20px 16px 80px" : "28px 32px", maxWidth: 760, overflowY: "auto", width: "100%" }}>
+    <main style={{ flex: 1, padding: isMobile ? "20px 16px 80px" : "28px 32px", maxWidth: "100%", overflowY: "auto", width: "100%" }}>
       {page === "queue" && !judging && <QueuePage queue={queue} onStart={item => setJudging(item)} />}
       {page === "queue" &&  judging && <JudgePage item={judging} onDone={handleJudgeDone} />}
       {page === "detail" && <DetailPage records={[...newRecords, ...HISTORY]} />}
