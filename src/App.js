@@ -547,11 +547,11 @@ export default function BetaTesterApp() {
 
   if (isMobile) {
     return (
-      <div style={{ display: "flex", flexDirection: "column", minHeight: "100vh", background: C.bg, fontFamily: "'Pretendard','Apple SD Gothic Neo','Noto Sans KR',sans-serif", color: C.text,overflowX: "hidden", width: "100vw", position: "relative" }}>
-        <header style={{ background: "#fff", borderBottom: "1px solid " + C.border, padding: "12px 16px", display: "flex", alignItems: "center", gap: 10, position: "sticky", top: 0, zIndex: 100 }}>
-          <img src="/images/nullhate.png" style={{ height: 20, objectFit: "contain" }} alt="nullhate" />
+      <div style={{ display: "flex", flexDirection: "column", minHeight: "100vh", background: C.bg, fontFamily: "'Pretendard','Apple SD Gothic Neo','Noto Sans KR',sans-serif", color: C.text, overflowX: "hidden", width: "100vw", position: "relative" }}>
+        <header style={{ background: "#fff", borderBottom: "1px solid " + C.border, padding: "12px 16px", display: "flex", alignItems: "center", position: "sticky", top: 0, zIndex: 100 }}>
+          <div style={{ flex: 1 }} />
           <div style={{ fontSize: 13, fontWeight: 800, background: C.ig, WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>(null)hate</div>
-          <div style={{ marginLeft: "auto", display: "flex", alignItems: "center", gap: 8 }}>
+          <div style={{ flex: 1, display: "flex", justifyContent: "flex-end", alignItems: "center", gap: 8 }}>
             <IgRing size={28}>{ME.avatar}</IgRing>
             <div style={{ fontSize: 11, fontWeight: 600, color: C.text }}>beta_{ME.bt_ID}</div>
           </div>
@@ -583,99 +583,50 @@ export default function BetaTesterApp() {
     );
   }
 
-  // admin 스타일 CSS 변수
-  const SB = {
-    bg:      "#fafafa",
-    border:  "#e8eaed",
-    text:    "#1a1d23",
-    sub:     "#6b7280",
-    sub2:    "#9ca3af",
-    p:       "#6d28d9",
-    pl:      "rgba(109,40,217,.08)",
-    g:       "#16a34a",
-    r:       "#dc2626",
-    s2:      "#f3f4f6",
-    ig:      "linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045)",
-  };
-
-  const navStyle = (isActive) => ({
-    width: "100%", display: "flex", alignItems: "center", gap: 7,
-    padding: "8px 9px", borderRadius: 7, border: "none", cursor: "pointer",
-    background: isActive ? SB.pl : "transparent",
-    color: isActive ? SB.p : SB.sub,
-    fontSize: 11, fontFamily: "inherit", fontWeight: isActive ? 700 : 500,
-    transition: "all .12s", marginBottom: 1, textAlign: "left",
-  });
-
-  const badgeStyle = (bg) => ({
-    marginLeft: "auto", fontSize: 9, background: bg, color: "#fff",
-    borderRadius: 10, padding: "1px 5px", fontWeight: 700,
-  });
-
   return (
     <div style={{ display: "flex", minHeight: "100vh", background: C.bg, fontFamily: "'Pretendard','Apple SD Gothic Neo','Noto Sans KR',sans-serif", color: C.text }}>
-      <aside style={{ width: 196, flexShrink: 0, background: SB.bg, borderRight: "1px solid " + SB.border, display: "flex", flexDirection: "column", position: "sticky", top: 0, height: "100vh" }}>
-
-        {/* 로고 */}
-        <div style={{ padding: "16px 14px 12px", borderBottom: "1px solid " + SB.border, display: "flex", alignItems: "center", gap: 9 }}>
-          <img src="/images/nullhate.png" style={{ height: 24, objectFit: "contain", display: "block" }} alt="nullhate" />
-          <div>
-            <div style={{ fontSize: 12, fontWeight: 800, background: SB.ig, WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>(null)hate</div>
-            <div style={{ fontSize: 9, color: SB.sub2 }}>beta test</div>
-          </div>
-        </div>
-
-        {/* 유저 */}
-        <div style={{ padding: "10px 14px", borderBottom: "1px solid " + SB.border, display: "flex", alignItems: "center", gap: 8, cursor: "default" }}>
-          <div style={{ width: 28, height: 28, borderRadius: "50%", background: SB.ig, padding: 1.5, flexShrink: 0 }}>
-            <div style={{ width: "100%", height: "100%", borderRadius: "50%", background: "#fff", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 12 }}>
-              {ME.avatar}
+      <aside style={{ width: 220, flexShrink: 0, background: "#fafafa", borderRight: "1px solid " + C.border, display: "flex", flexDirection: "column", position: "sticky", top: 0, height: "100vh" }}>
+        <div style={{ padding: "20px 18px 16px", borderBottom: "1px solid " + C.border }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+            <div style={{ width: 30, height: 30, borderRadius: 8, background: C.ig, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 14 }}>🛡</div>
+            <div>
+              <div style={{ fontSize: 13, fontWeight: 800, letterSpacing: -0.3, color: C.text }}>CleanGram</div>
+              <div style={{ fontSize: 10, color: C.sub }}>Beta Tester</div>
             </div>
           </div>
-          <div style={{ flex: 1 }}>
-            <div style={{ fontSize: 11, fontWeight: 700, color: SB.text }}>beta_{ME.bt_ID}</div>
-            <div style={{ fontSize: 9, color: SB.sub, marginTop: 1, display: "flex", alignItems: "center", gap: 4 }}>
-              <span style={{ width: 5, height: 5, borderRadius: "50%", background: SB.g, display: "inline-block" }} />
+        </div>
+        <div style={{ padding: "14px 18px", borderBottom: "1px solid " + C.border, display: "flex", alignItems: "center", gap: 10 }}>
+          <IgRing size={38}>{ME.avatar}</IgRing>
+          <div>
+            <div style={{ fontSize: 12, fontWeight: 600, color: C.text }}>beta_{ME.bt_ID}</div>
+            <div style={{ fontSize: 10, color: C.sub, marginTop: 1, display: "flex", alignItems: "center", gap: 4 }}>
+              <span style={{ width: 5, height: 5, borderRadius: "50%", background: C.green, display: "inline-block" }} />
               활동 중
             </div>
           </div>
         </div>
-
-        {/* 네비 */}
-        <nav style={{ padding: "8px 8px", flex: 1, overflowY: "auto" }}>
-          {NAV.map(n => {
-            const isActive = page === n.id && !judging;
-            return (
-              <button key={n.id} onClick={() => { setPage(n.id); setJudging(null); }} style={navStyle(isActive)}
-                onMouseOver={e => { if (!isActive) { e.currentTarget.style.background = SB.s2; e.currentTarget.style.color = SB.text; }}}
-                onMouseOut={e => { if (!isActive) { e.currentTarget.style.background = "transparent"; e.currentTarget.style.color = SB.sub; }}}
-              >
-                <span style={{ fontSize: 14 }}>{n.icon}</span>
-                {n.label}
-                {n.id === "queue" && queue.length > 0 && <span style={badgeStyle(SB.p)}>{queue.length}</span>}
-                {n.id === "detail" && newRecords.length > 0 && <span style={badgeStyle(SB.g)}>N</span>}
-              </button>
-            );
-          })}
+        <nav style={{ padding: "12px 10px", flex: 1 }}>
+          {NAV.map(n => (
+            <button key={n.id} onClick={() => { setPage(n.id); setJudging(null); }} style={{ width: "100%", display: "flex", alignItems: "center", gap: 10, padding: "10px 10px", borderRadius: 9, border: "none", cursor: "pointer", marginBottom: 3, textAlign: "left", background: page === n.id && !judging ? "rgba(124,58,237,.08)" : "transparent", color: page === n.id && !judging ? C.purple : C.sub, fontSize: 13, fontWeight: page === n.id ? 600 : 400, transition: "all .15s", borderLeft: page === n.id && !judging ? "3px solid " + C.purple : "3px solid transparent" }}>
+              <span style={{ fontSize: 16 }}>{n.icon}</span>
+              {n.label}
+              {n.id === "queue" && <span style={{ marginLeft: "auto", fontSize: 10, background: C.purple, color: "#fff", borderRadius: 20, padding: "1px 7px" }}>{queue.length}</span>}
+              {n.id === "detail" && newRecords.length > 0 && <span style={{ marginLeft: "auto", fontSize: 10, background: C.green, color: "#fff", borderRadius: 20, padding: "1px 7px" }}>NEW</span>}
+            </button>
+          ))}
         </nav>
-
-        {/* 하단 동의율 */}
-        <div style={{ padding: "10px 14px", borderTop: "1px solid " + SB.border }}>
-          <div style={{ fontSize: 9, color: SB.sub2, letterSpacing: ".5px", textTransform: "uppercase", marginBottom: 7, fontWeight: 600 }}>이번 주 동의율</div>
-          {[
-            { l: "판정", v: METRIC.decision_agr_rate, c: SB.p },
-            { l: "유형", v: METRIC.type_agr_rate,     c: C.red },
-          ].map((r, i) => (
-            <div key={i} style={{ display: "flex", alignItems: "center", gap: 5, marginBottom: 4 }}>
-              <div style={{ fontSize: 9, color: SB.sub, width: 20 }}>{r.l}</div>
-              <div style={{ flex: 1, height: 3, background: SB.border, borderRadius: 99, overflow: "hidden" }}>
+        <div style={{ padding: "14px 18px", borderTop: "1px solid " + C.border }}>
+          <div style={{ fontSize: 10, color: C.sub, marginBottom: 10, letterSpacing: "0.8px", textTransform: "uppercase" }}>이번 주 동의율</div>
+          {[{ l: "판정", v: METRIC.decision_agr_rate, c: C.purple }, { l: "유형", v: METRIC.type_agr_rate, c: C.red }].map((r, i) => (
+            <div key={i} style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 7 }}>
+              <div style={{ fontSize: 10, color: C.sub, width: 28 }}>{r.l}</div>
+              <div style={{ flex: 1, height: 3, background: C.muted, borderRadius: 99 }}>
                 <div style={{ width: (r.v * 100) + "%", height: "100%", background: r.c, borderRadius: 99 }} />
               </div>
-              <div style={{ fontSize: 9, color: r.c, fontWeight: 700, width: 22, textAlign: "right" }}>{Math.round(r.v * 100)}%</div>
+              <div style={{ fontSize: 10, color: r.c, fontWeight: 700 }}>{Math.round(r.v * 100)}%</div>
             </div>
           ))}
         </div>
-
       </aside>
       {mainContent}
     </div>
