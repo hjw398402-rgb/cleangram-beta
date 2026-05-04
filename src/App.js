@@ -449,7 +449,7 @@ function MyWorkPage({ newRecords, stats }) {
   const tabs = ["전체","TYPE1","TYPE2","TYPE3"];
   const allHistory = [...newRecords, ...HISTORY];
   const filtered = tab === "전체" ? allHistory : allHistory.filter(h => h.type === tab);
-  const ringSize = isMobile ? 48 : 60;
+  const ringSize = isMobile ? 40 : 60;
 
   return (
     <div>
@@ -471,7 +471,7 @@ function MyWorkPage({ newRecords, stats }) {
       </div>
       <div style={{ background: C.surface, border: "1px solid " + C.border, borderRadius: 14, padding: 20, marginBottom: 14 }}>
         <div style={{ fontSize: 11, color: C.sub, letterSpacing: "1px", textTransform: "uppercase", marginBottom: 16 }}>동의율</div>
-        <div style={{ display: "flex", justifyContent: "space-around", marginBottom: 20 }}>
+        <div style={{ display: "flex", justifyContent: "space-around", marginBottom: 20, overflowX: "hidden" }}>
           {agreeItems.map((a, i) => (
             <div key={i} style={{ textAlign: "center" }}>
               <Ring rate={a.rate} color={a.color} size={ringSize} />
