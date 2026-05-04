@@ -558,7 +558,7 @@ export default function BetaTesterApp() {
       <div style={{ display: "flex", flexDirection: "column", minHeight: "100vh", background: C.bg, fontFamily: "'Pretendard','Apple SD Gothic Neo','Noto Sans KR',sans-serif", color: C.text }}>
         <header style={{ background: "#fff", borderBottom: "1px solid " + C.border, padding: "12px 16px", display: "flex", alignItems: "center", gap: 10, position: "sticky", top: 0, zIndex: 100 }}>
           <div style={{ flex: 1 }} />
-          <img src="/images/nullhate.png" style={{ height: 20, objectFit: "contain" }} alt="nullhate" />
+          <img src="/images/nullhate.png" style={{ height: 28, objectFit: "contain" }} alt="nullhate" />
           <div style={{ marginLeft: "auto", display: "flex", alignItems: "center", gap: 8 }}>
             <IgRing size={28}>{ME.avatar}</IgRing>
             <div style={{ fontSize: 11, fontWeight: 600, color: C.text }}>beta_{ME.bt_ID}</div>
