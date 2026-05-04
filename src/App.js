@@ -557,8 +557,8 @@ export default function BetaTesterApp() {
     return (
       <div style={{ display: "flex", flexDirection: "column", minHeight: "100vh", background: C.bg, fontFamily: "'Pretendard','Apple SD Gothic Neo','Noto Sans KR',sans-serif", color: C.text }}>
         <header style={{ background: "#fff", borderBottom: "1px solid " + C.border, padding: "12px 16px", display: "flex", alignItems: "center", gap: 10, position: "sticky", top: 0, zIndex: 100 }}>
-          <div style={{ width: 26, height: 26, borderRadius: 7, background: C.ig, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 12 }}>🛡</div>
-          <div style={{ fontSize: 14, fontWeight: 800, color: C.text }}>CleanGram</div>
+          <div style={{ flex: 1 }} />
+          <img src="/images/nullhate.png" style={{ height: 20, objectFit: "contain" }} alt="nullhate" />
           <div style={{ marginLeft: "auto", display: "flex", alignItems: "center", gap: 8 }}>
             <IgRing size={28}>{ME.avatar}</IgRing>
             <div style={{ fontSize: 11, fontWeight: 600, color: C.text }}>beta_{ME.bt_ID}</div>
